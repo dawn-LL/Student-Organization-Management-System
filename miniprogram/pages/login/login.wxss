@@ -1,0 +1,75 @@
+/* pages/login/login.wxss */
+page{ 
+  height: 100%; 
+ } 
+ .container { 
+  height: 100%; 
+  display: flex; 
+  flex-direction: column; 
+  padding: 0; 
+  box-sizing: border-box; 
+  background-color: #f2f2f2 
+ }
+
+ .header {
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+ }
+ .header-img {
+  width: 400rpx;
+  height: 400rpx;
+ }
+ .login-view { 
+  margin-top: 20px; 
+  flex: auto; 
+  height:100%; 
+ } 
+ .inputView {
+  background-color: #fff; 
+  line-height: 44px; 
+ }
+ 
+ .nameImage, .keyImage { 
+  margin-left: 22px;
+  vertical-align: middle; 
+  width: 14px; 
+  height: 14px 
+ } 
+  
+ .loginLab { 
+  margin-left: 10px;
+  margin-right: 15px;
+  vertical-align: middle; 
+  color: #545454; 
+  font-size: 14px 
+ } 
+ .inputText {
+  float: right;
+  text-align: right;
+  margin-right: 22px;
+  margin-top: 12px;
+  color: #cccccc; 
+  font-size: 14px 
+ } 
+  
+ .line { 
+  width: 100%; 
+  height: 1px; 
+  background-color: #cccccc; 
+  margin-top: 1px; 
+ } 
+
+ .loginBtnView { 
+  width: 100%; 
+  height: auto; 
+  background-color: #f2f2f2; 
+  margin-top: 0px; 
+  margin-bottom: 0px; 
+  padding-bottom: 0px; 
+ } 
+  
+ .loginBtn { 
+  width: 80%; 
+  margin-top: 35px; 
+ } 
