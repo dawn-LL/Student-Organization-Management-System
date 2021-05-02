@@ -9,28 +9,19 @@
       </view>
   </view>
 
-  <recycle-view batch="{{batchSetRecycleData}}" id="recycleId">
-    <view slot="before">长列表前面的内容</view>
-    <recycle-item wx:for="{{recycleList}}" wx:key="id">
-      <view>
-          <image style='width:80px;height:80px;float:left;' src="{{item.image_url}}"></image>
-        {{item.idx+1}}. {{item.title}}
+  <recycle-view class="organization-list" batch="{{batchSetRecycleData}}" id="recycleId">
+    <recycle-item wx:for="{1,2,3}" wx:key="id" class="organization-cell">
+      <view class="organization-cell-content">
+        <image class="organization-avatar" src="https://i.loli.net/2021/05/01/DsYnxAElyjG8RNI.jpg"></image>
+        <view class="organization-info">
+          <view class="organization-info-head">
+            <label class="organization-info-name">鬼灭小分队</label>
+            <label class="organization-news-time">今天</label>
+          </view>
+          <label class="organization-news">最新公告：无限列车今晚上映！</label>
+        </view>
       </view>
     </recycle-item>
-    <view slot="after">长列表后面的内容</view>
   </recycle-view>
-
-  <block wx:for="{{[1,2,3,4,5,6,7]}}">
-    <view class="organization-cell">
-      <image class="organization-avatar" src="https://i.loli.net/2021/05/01/DsYnxAElyjG8RNI.jpg"></image>
-      <view class="organization-info">
-        <view class="organization-info-head">
-          <label class="organization-info-name">鬼灭小分队</label>
-          <label class="organization-news-time">今天</label>
-        </view>
-        <label class="organization-news">最新公告：无限列车今晚上映！</label>
-      </view>
-    </view>
-  </block>
 
 </view>
