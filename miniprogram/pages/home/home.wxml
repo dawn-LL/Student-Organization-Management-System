@@ -1,0 +1,36 @@
+<!--pages/home/home.wxml-->
+<view class="container">
+
+  <view class="head">
+    <label class="head-title-label">组织</label>
+      <view class="head-add-view">
+        <image class="head-add-icon" src="../../images/add_group.png"></image>
+        <label class="head-add-label">新建一个</label>
+      </view>
+  </view>
+
+  <recycle-view batch="{{batchSetRecycleData}}" id="recycleId">
+    <view slot="before">长列表前面的内容</view>
+    <recycle-item wx:for="{{recycleList}}" wx:key="id">
+      <view>
+          <image style='width:80px;height:80px;float:left;' src="{{item.image_url}}"></image>
+        {{item.idx+1}}. {{item.title}}
+      </view>
+    </recycle-item>
+    <view slot="after">长列表后面的内容</view>
+  </recycle-view>
+
+  <block wx:for="{{[1,2,3,4,5,6,7]}}">
+    <view class="organization-cell">
+      <image class="organization-avatar" src="https://i.loli.net/2021/05/01/DsYnxAElyjG8RNI.jpg"></image>
+      <view class="organization-info">
+        <view class="organization-info-head">
+          <label class="organization-info-name">鬼灭小分队</label>
+          <label class="organization-news-time">今天</label>
+        </view>
+        <label class="organization-news">最新公告：无限列车今晚上映！</label>
+      </view>
+    </view>
+  </block>
+
+</view>

@@ -33,10 +33,16 @@ Page({
       })
     } else {
       //do request
-      wx.showToast({ 
-        title: '登录成功', 
-        icon: 'success', 
-        duration: 2000 
+      // wx.showToast({ 
+      //   title: '登录成功', 
+      //   icon: 'success', 
+      //   duration: 2000,
+      //   complete: wx.redirectTo({
+      //     url: 'pages/index/index?'
+      //   })
+      // })
+      wx.switchTab({
+        url: '../home/home'
       })
     }
   },

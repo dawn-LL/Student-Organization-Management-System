@@ -1,0 +1,85 @@
+/* pages/home/home.wxss */
+.container {
+  height: 100%;
+  width: 100%;
+}
+
+/*
+顶部布局
+*/
+.head {
+  width: 100%;
+  margin-top: 0px;
+  margin-left: 0px;
+  background: #F1F1F1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.head-title-label {
+  margin-top: 0px;
+  margin-left: 16px;
+  text-align: left;
+}
+
+.head-add-view {
+  margin-top: 0px;
+  margin-right: 16px;
+  display: flex;
+}
+
+.head-add-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 2px;
+  align-self: center;
+}
+
+.head-add-label {
+  text-align: right;
+}
+
+/*
+信息列表布局
+*/
+.organization-cell {
+  display: flex;
+  width: 100%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.organization-avatar {
+  width: 45px;
+  height: 45px;
+  margin-left: 16px;
+  border-radius: 5px;
+  align-self: center;
+}
+
+.organization-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 10px;
+  flex-basis: calc(100vw - 71px);
+}
+
+.organization-info-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.organization-info-name {
+
+}
+
+.organization-news-time {
+  margin-right: 16px;
+}
+
+.organization-news {
+
+}
