@@ -1,0 +1,55 @@
+<!--pages/organization/organization.wxml-->
+<view class="container">
+
+  <!--头部-->
+  <view class="header">
+    <image class="header-avatar" src="https://i.loli.net/2021/05/01/DsYnxAElyjG8RNI.jpg"></image>
+    <label class="header-title">鬼灭小分队</label>
+  </view>
+
+  <!--组织名称-->
+  <view class="organization-cell">
+    <label class="organization-cell-title">组织名称</label>
+    <view class="organization-cell-content">
+      <label class="organization-cell-label">鬼灭小分队</label>
+    </view>
+  </view>
+  
+  <!--公告-->
+  <navigator class="organization-cell" url="../im/im" open-type="navigate">
+    <label class="organization-cell-title">公告</label>
+    <view class="organization-cell-content">
+      <label class="organization-cell-label">无限列车今晚上映!!!</label>
+      <image class="organization-cell-more-icon" src="../../images/more.png"></image>
+    </view>
+  </navigator>
+
+  <!--负责人-->
+  <view class="organization-cell">
+    <label class="organization-cell-title">负责人</label>
+    <view class="organization-cell-content">
+      <label class="organization-cell-label">dawn</label>
+    </view>
+  </view>
+
+  <!--成员-->
+  <navigator class="organization-cell" url="../im/im" open-type="navigate">
+    <label class="organization-cell-title">成员</label>
+    <view class="organization-cell-content" url="../im/im" open-type="navigate">
+      <label class="organization-cell-label">100人</label>
+      <image class="organization-cell-more-icon" src="../../images/more.png"></image>
+    </view>
+  </navigator>
+
+  <!--聊天室-->
+  <view class="organization-chat-room">
+    <navigator url="../im/im" open-type="navigate" class="organization-chat-room-text">
+      <label>进入聊天室</label>
+    </navigator>
+  </view>
+
+  <!--退出组织-->
+  <view class="exit-organization">
+    <button class="exit-organization-button" type="warn" plain="false" bindtap="exit-organization">退出组织</button>
+  </view> 
+</view>

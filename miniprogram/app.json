@@ -1,10 +1,10 @@
 {
   "pages": [
     "pages/home/home",
-    "pages/login/login",
-    
-    "pages/my/my",
+    "pages/organization/organization",
     "pages/index/index",
+    "pages/login/login",
+    "pages/my/my",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
     "pages/databaseGuide/databaseGuide",
