@@ -1,5 +1,5 @@
 <!--pages/organization/organization.wxml-->
-<view class="container">
+<view class="container" >
 
   <!--头部-->
   <view class="header">
@@ -16,7 +16,7 @@
   </view>
   
   <!--公告-->
-  <navigator class="organization-cell" url="../im/im" open-type="navigate">
+  <navigator class="organization-cell" url="../organization/announcement/announcement" open-type="navigate">
     <label class="organization-cell-title">公告</label>
     <view class="organization-cell-content">
       <label class="organization-cell-label">无限列车今晚上映!!!</label>
@@ -33,7 +33,7 @@
   </view>
 
   <!--成员-->
-  <navigator class="organization-cell" url="../im/im" open-type="navigate">
+  <navigator class="organization-cell" url="../organization/member/member" open-type="navigate">
     <label class="organization-cell-title">成员</label>
     <view class="organization-cell-content" url="../im/im" open-type="navigate">
       <label class="organization-cell-label">100人</label>

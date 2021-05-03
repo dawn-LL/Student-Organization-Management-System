@@ -2,6 +2,8 @@
   "pages": [
     "pages/home/home",
     "pages/organization/organization",
+    "pages/organization/announcement/announcement",
+    "pages/organization/member/member",
     "pages/index/index",
     "pages/login/login",
     "pages/my/my",

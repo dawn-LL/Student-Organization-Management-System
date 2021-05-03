@@ -1,0 +1,16 @@
+<!--pages/organization/member/member.wxml-->
+<scroll-view scroll-y="true" scroll-into-view="{{alpha}}">
+  <view class="alphabet-list">
+    <view wx:for="{{['a','b','c','d','e','f']}}" wx:key="unique" id="{{item.alphabet}}" class="section-item">
+      <!--首字母-->
+      <view class="section-item-header">{{item}}</view>
+        <!--该首字母的成员-->
+        <view wx:for="{{['阿柒','伍六七','大宝']}}" wx:key="unique" wx:for-item="cell" wx:for-index="cellIndex" class="section-item-cells">
+          <view class="section-item-cell {{cellIndex != (item.datas.length-1) ? 'border-bottom':''}}">
+            <image class='avatar' src='https://i.loli.net/2021/05/03/Xegxh8pkDKn3sNT.jpg'></image>
+            <label class="name">{{cell}}</label>
+          </view>
+        </view>
+    </view>
+  </view>
+</scroll-view>

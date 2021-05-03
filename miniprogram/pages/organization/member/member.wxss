@@ -1,0 +1,57 @@
+/* pages/organization/member/member.wxss */
+.alphabet-list .section-item{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-item-header {
+  width: 100%;
+  color: #a8a8a8;
+  background-color: rgb(237, 237, 237);
+  padding: 15rpx 35rpx;
+  font-size: 30rpx;
+}
+
+.section-item-cells {
+  padding-left: 35rpx;
+}
+
+.section-item-cell {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 16rpx 0;
+}
+
+.border-bottom {
+  position: relative;
+  border:none;
+}
+
+.border-bottom:after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+  width: 85%;
+  height: 1.2px;
+  right: 16px;
+  -webkit-transform: scaleY(0.5);
+          transform: scaleY(0.5);
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+}
+
+.avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 10rpx;
+}
+
+.name {
+  margin-left: 35rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
