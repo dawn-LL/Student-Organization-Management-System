@@ -1,1 +1,52 @@
 /* pages/my/my.wxss */
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.avatar {
+  width: 50%;
+  height: 50vw;
+}
+
+.person-info {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  margin-top: 27px;
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+}
+
+.person-info-cell {
+  position: relative;
+  border:none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.person-info-cell:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+  width: 90%;
+  left: 17px;
+  height: 1px;
+}
+
+.border-bottom {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  position: relative;
+  border:none;
+}
+
+.title {
+  margin-left: 17px;
+}
+
+.content {
+  margin-left: 75px;
+}

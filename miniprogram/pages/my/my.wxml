@@ -1,2 +1,12 @@
 <!--pages/my/my.wxml-->
-
+<view class="container">
+  <image class="avatar" src="https://i.loli.net/2021/05/04/hR1jpPA3DiTsELr.jpg"></image>
+  <view class="person-info">
+    <block wx:for="{{['姓名','性别','学号','学院','专业','年级','班级','简介']}}">
+      <view class="{{item == '简介'?'border-bottom':'person-info-cell '}}">
+        <text class="title">{{item}}</text>
+        <text class="content">{{index}}</text>
+      </view>
+    </block>
+  </view>
+</view>
