@@ -1,0 +1,42 @@
+/* pages/organization/announcement/announcement.wxss */
+.announcement-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #f6f6f6;
+}
+
+.announcement-cell-padding {
+  width: 100%;
+  height: 13px;
+}
+
+.announcement-cell-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding-top: 23px;
+  padding-bottom: 17px;
+}
+
+.announcement-text {
+  margin-left: 17px;
+  margin-right: 17px;
+}
+
+.announcement-author {
+  margin-top: 11px;
+  margin-left: 17px;
+  color: #888888;
+  font-size: 15px;
+}
+
+.add-icon {
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  bottom: 30px;
+  right: 20px;
+  background: white;
+}

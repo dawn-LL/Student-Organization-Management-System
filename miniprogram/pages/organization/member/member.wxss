@@ -29,12 +29,12 @@
   border:none;
 }
 
-.border-bottom:after{
+.border-bottom:after {
   content: '';
   position: absolute;
   bottom: 0;
   background: rgba(0, 0, 0, 0.1);
-  width: 85%;
+  width: 80%;
   height: 1.2px;
   right: 16px;
   -webkit-transform: scaleY(0.5);
