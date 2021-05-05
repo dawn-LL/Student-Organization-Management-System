@@ -1,51 +1,53 @@
 /* pages/organization/organization.wxss */
 .container {
   width: 100%;
-  background-color: #f6f6f6;
+  height: 100vh;
+  background: #f6f6f6;
+  overflow: scroll;
 }
 
 .header {
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding-top: 21px;
-  padding-bottom: 21px;
+  padding-top: 21rpx;
+  padding-bottom: 21rpx;
   background-color: white;
 }
 
 .header-avatar {
-  width: 76px;
-  height: 76px;
-  border-radius: 15px;
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 30rpx;
   align-self: center;
   justify-self: center;
 }
 
 .header-title {
-  margin-top: 19px;
+  margin-top: 40rpx;
   align-self: center;
   justify-self: center;
 }
 
 .organization-cell {
   width: 100%;
-  margin-top: 13px;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  margin-top: 26rpx;
+  padding-top: 32rpx;
+  padding-bottom: 32rpx;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   background: white;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1rpx solid rgba(0, 0, 0, 0.1);
 }
 
 .organization-cell-title {
-  margin-left: 16px;
+  margin-left: 32rpx;
   align-self: center;
 }
 
 .organization-cell-content {
-  margin-right: 16px;
+  margin-right: 32rpx;
   display: flex;
   flex-direction: row;
   align-self: center;
@@ -54,20 +56,20 @@
 .organization-cell-label {
   color: #888888;
   align-self: center;
-  max-width: 200px;
+  max-width: 400rpx;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 
 .organization-cell-more-icon {
-  width: 16px;
-  height: 16px;
+  width: 32rpx;
+  height: 32rpx;
   align-self: center;
 }
 
 .organization-chat-room {
-  margin-top: 13px;
+  margin-top: 26rpx;
   width: 100%;
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -76,13 +78,13 @@
 
 .organization-chat-room-text {
   width: 100%;
-  line-height: 52px;
+  line-height: 104rpx;
   font-size: 34rpx;
   color: #007aff;
   text-align: center;
 }
 
 .exit-organization {
-  margin-top: 150rpx;
-  width: 45%;
+  margin-top: 100rpx;
+  width: 100%;
 }

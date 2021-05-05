@@ -8,7 +8,7 @@
 
   <view class="login-view"> 
 
-    <view class="inputView"> 
+    <view class="inputView top"> 
       <image class="nameImage" src="../../images/name.png"></image> 
       <label class="loginLab">学号</label> 
       <input class="inputText" placeholder="请输入学号" bindinput="accountInput" /> 
@@ -17,7 +17,7 @@
     <view class="line"></view> 
 
     <!--密码--> 
-    <view class="inputView"> 
+    <view class="inputView bottom"> 
       <image class="keyImage" src="../../images/key.png"></image> 
       <label class="loginLab">密码</label>
       <input class="inputText" password="true" placeholder="请输入密码" bindinput="passwordInput" /> 

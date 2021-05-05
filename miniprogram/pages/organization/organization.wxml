@@ -43,7 +43,7 @@
 
   <!--聊天室-->
   <view class="organization-chat-room">
-    <navigator url="../im/im" open-type="navigate" class="organization-chat-room-text">
+    <navigator url="../room/room" open-type="navigate" class="organization-chat-room-text">
       <label>进入聊天室</label>
     </navigator>
   </view>
@@ -51,5 +51,5 @@
   <!--退出组织-->
   <view class="exit-organization">
     <button class="exit-organization-button" type="warn" plain="false" bindtap="exit-organization">退出组织</button>
-  </view> 
+  </view>
 </view>

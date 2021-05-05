@@ -78,7 +78,7 @@ Page({
   onShareAppMessage() {
     return {
       title: '即时通信 Demo',
-      path: '/pages/im/room/room',
+      path: '/pages/room/room',
     }
   },
 })
