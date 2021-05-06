@@ -35,8 +35,7 @@
     "userConfirmedBundleSwitch": false,
     "packNpmManually": false,
     "packNpmRelationList": [],
-    "minifyWXSS": true,
-    "miniprogramRoot": "./miniprogram"
+    "minifyWXSS": true
   },
   "appid": "wx83987e6ef718a891",
   "projectname": "miniprogram-1",

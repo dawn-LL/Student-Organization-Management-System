@@ -11,9 +11,9 @@ Page({
 
   // 获取输入账号 
   accountInput: function (e) { 
-  this.setData({ 
-   account:e.detail.value 
-  })
+    this.setData({ 
+      account:e.detail.value
+    })
   },
 
   // 获取输入密码
@@ -27,25 +27,50 @@ Page({
   loginRequest: function () {
     if (this.data.account.length == 0 || this.data.password.length == 0) { 
       wx.showToast({ 
-      title: '学号和密码不能为空', 
-      icon: 'error', 
-      duration: 2000 
+        title: '学号和密码不能为空', 
+        icon: 'error', 
+        duration: 2000 
       })
     } else {
       //do request
-      // wx.showToast({ 
-      //   title: '登录成功', 
-      //   icon: 'success', 
-      //   duration: 2000,
-      //   complete: wx.redirectTo({
-      //     url: 'pages/index/index?'
-      //   })
-      // })
-      wx.switchTab({
-        url: '../home/home'
+      wx.cloud.callFunction({
+        name: 'login',
+        data: {
+          account:this.data.account,
+          password:this.data.password
+        },
+        success: res => {
+          console.log("返回结果%o", res)
+          if (res.msg == "true") {
+            wx.showToast({ 
+              title: '登录成功', 
+              icon: 'success', 
+              duration: 2000,
+              complete: wx.switchTab({
+                url: '../home/home'
+              })
+            })
+          } else {
+            wx.showToast({ 
+              title: '学号或密码错误', 
+              icon: 'error', 
+              duration: 2000 
+              })
+          }
+        },
+        fail: err => {
+          console.error('[云函数] [login] 调用失败', err)
+          wx.showToast({ 
+            title: '请求错误，请重试', 
+            icon: 'error', 
+            duration: 2000
+            })
+        }
       })
+
     }
   },
+
 
   /**
    * 生命周期函数--监听页面加载
