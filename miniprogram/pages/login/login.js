@@ -41,7 +41,7 @@ Page({
         },
         success: res => {
           console.log("返回结果%o", res)
-          if (res.msg == "true") {
+          if (res.result.msg == "success") {
             wx.showToast({ 
               title: '登录成功', 
               icon: 'success', 
@@ -51,8 +51,8 @@ Page({
               })
             })
           } else {
-            wx.showToast({ 
-              title: '学号或密码错误', 
+            wx.showToast({
+              title: res.result.msg, 
               icon: 'error', 
               duration: 2000 
               })
@@ -67,7 +67,6 @@ Page({
             })
         }
       })
-
     }
   },
 

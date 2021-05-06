@@ -24,17 +24,15 @@ exports.main = async (event, context) => {
 
   const db = cloud.database()
   
-  db.collection("student").where({
+  let res =  await db.collection("student").where({
     student_id:event.account
-  }).get().then(res => {
-    console.log("res password: %s", res.data[0].password)
-    console.log("event password: %s", event.password)
-    if (event.password == res.data[0].password) {
-      return {msg:"true"}
-    }
-  }).catch(err => {
-    console.log(err)
-  })
-  return {msg:"false"}
+  }).get()
+  console.log("res password:%o", res.data[0].password)
+  console.log("event password:%o", event.password)
+  if (event.password == res.data[0].password) {
+    return {msg:"success"}
+  } else {
+    return {msg:"密码错误"}
+  }
 }
 
