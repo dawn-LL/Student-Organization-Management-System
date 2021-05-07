@@ -1,7 +1,7 @@
 <!--pages/organization/announcement/announcement.wxml-->
 <view class="container">
-  <scroll-view scroll-y="true" class="announcement-list" wx:if="{{announcements.length > 0}}" wx:key="id">
-    <view class="announcement-cell" wx:for="{{announcements}}" wx:if="">
+  <scroll-view scroll-y="true" class="announcement-list" wx:if="{{announcements.length > 0}}">
+    <view class="announcement-cell" wx:for="{{announcements}}" wx:key="id">
       <view class="announcement-cell-padding"></view>
       <view class="announcement-cell-content">
         <label class="announcement-text">{{item}}</label>
