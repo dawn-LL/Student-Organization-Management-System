@@ -10,8 +10,8 @@
   </view>
 
   <recycle-view class="organization-list" batch="{{batchSetRecycleData}}" id="recycleId">
-    <recycle-item wx:for="{{organizations}}" wx:key="*this" class="organization-cell">
-      <navigator url="../organization/organization?organization_name={{item.organization_name}}&&organization_avatar={{item.organization_avatar}}&&announcement={{item.announcement.length==0 ? '暂无公告' : item.announcement[0]}}&&admin_id={{item.admin}}&&admin_name={{item.admin_name}}&&organization_member_number={{item.organization_member.length}}" open-type="navigate" class="organization-cell-content">
+    <recycle-item wx:for="{{organizations}}" wx:key="id" class="organization-cell">
+      <navigator url="../organization/organization?organization_id={{item._id}}&&organization_name={{item.organization_name}}&&organization_avatar={{item.organization_avatar}}&&announcement={{item.announcement.length==0 ? '暂无公告' : item.announcement[0]}}&&admin_id={{item.admin}}&&admin_name={{item.admin_name}}&&organization_member_number={{item.organization_member.length}}" open-type="navigate" class="organization-cell-content">
         <image class="organization-avatar" src="{{item.organization_avatar}}"></image>
         <view class="organization-info">
           <view class="organization-info-head">

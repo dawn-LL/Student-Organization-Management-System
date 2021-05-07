@@ -1,4 +1,9 @@
 /* pages/organization/announcement/announcement.wxss */
+.container {
+  width: 100%;
+  height: 100vh;
+  background: #f6f6f6;
+}
 .announcement-list {
   width: 100%;
   display: flex;
@@ -38,5 +43,6 @@
   height: 36px;
   bottom: 30px;
   right: 20px;
+  border-radius: 18px;
   background: white;
 }

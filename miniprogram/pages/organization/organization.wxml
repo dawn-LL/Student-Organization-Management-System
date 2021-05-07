@@ -16,7 +16,7 @@
   </view>
   
   <!--公告-->
-  <navigator class="organization-cell" url="../organization/announcement/announcement" open-type="navigate">
+  <navigator class="organization-cell" url="../organization/announcement/announcement?organization_id={{organization.organization_id}}" open-type="navigate">
     <label class="organization-cell-title">公告</label>
     <view class="organization-cell-content">
       <label class="organization-cell-label">{{organization.announcement}}</label>

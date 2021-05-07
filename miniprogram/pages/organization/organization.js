@@ -6,6 +6,7 @@ Page({
    */
   data: {
     organization:{
+      organization_id:"",
       organization_name:"",
       organization_avatar:"",
       admin_id:"",
@@ -21,6 +22,7 @@ Page({
   onLoad: function (options) {
     this.setData({
       organization : {
+        organization_id:options.organization_id,
         organization_name:options.organization_name,
         organization_avatar:options.organization_avatar,
         admin_id:options.admin_id,

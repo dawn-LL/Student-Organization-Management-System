@@ -5,14 +5,26 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    organization_id:"",
+    announcements:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.cloud.callFunction({
+      name:'get-organization-info',
+      data:{
+        id:options.organization_id
+      }
+    }).then(res=>{
+      console.log("[公告][返回结果]", res)
+      this.setData({
+        organization_id:options.organization_id,
+        announcements:res.result.data.announcement
+      })
+    })
   },
 
   /**
