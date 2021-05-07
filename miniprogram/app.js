@@ -14,6 +14,11 @@ App({
       })
     }
 
-    this.globalData = {}
+    this.globalData = {
+      userInfo:{
+        student_id:"",
+        id:""
+      }
+    }
   }
 })

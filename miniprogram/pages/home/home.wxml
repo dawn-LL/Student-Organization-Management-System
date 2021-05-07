@@ -10,15 +10,14 @@
   </view>
 
   <recycle-view class="organization-list" batch="{{batchSetRecycleData}}" id="recycleId">
-    <recycle-item wx:for="{{[1,2,3,4,5,6,7,8,9]}}" wx:key="*this" class="organization-cell">
+    <recycle-item wx:for="{{organizations}}" wx:key="*this" class="organization-cell">
       <navigator url="../organization/organization" open-type="navigate" class="organization-cell-content">
-        <image class="organization-avatar" src="https://i.loli.net/2021/05/01/DsYnxAElyjG8RNI.jpg"></image>
+        <image class="organization-avatar" src="{{item.organization_avatar}}"></image>
         <view class="organization-info">
           <view class="organization-info-head">
-            <label class="organization-info-name">鬼灭小分队</label>
-            <label class="organization-news-time">今天</label>
+            <label class="organization-info-name">{{item.organization_name}}</label>
           </view>
-          <label class="organization-news">最新公告：无限列车今晚上映！</label>
+          <label class="organization-news">{{item.announcement[0]}}</label>
         </view>
       </navigator>
     </recycle-item>

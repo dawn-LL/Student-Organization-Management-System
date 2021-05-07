@@ -73,17 +73,11 @@
 
 .organization-info-head {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .organization-info-name {
   font-size: 19px;
-}
-
-.organization-news-time {
-  color: #AAAAAA;
-  margin-right: 16px;
 }
 
 .organization-news {

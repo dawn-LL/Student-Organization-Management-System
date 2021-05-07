@@ -27,10 +27,16 @@ exports.main = async (event, context) => {
   let res =  await db.collection("student").where({
     student_id:event.account
   }).get()
-  console.log("res password:%o", res.data[0].password)
-  console.log("event password:%o", event.password)
+  console.log("rse:", res)
+  console.log("res password:", res.data[0].password)
+  console.log("res id:", res.data[0]._id)
+  console.log("event password:", event.password)
+  
   if (event.password == res.data[0].password) {
-    return {msg:"success"}
+    return {
+      msg:"success",
+      id:res.data[0]._id
+    }
   } else {
     return {msg:"密码错误"}
   }

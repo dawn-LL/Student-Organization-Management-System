@@ -1,4 +1,5 @@
 // pages/login/login.js
+var app = getApp()
 Page({
 
   /**
@@ -27,7 +28,7 @@ Page({
   loginRequest: function () {
     if (this.data.account.length == 0 || this.data.password.length == 0) { 
       wx.showToast({ 
-        title: '学号和密码不能为空', 
+        title: '学号密码不能为空', 
         icon: 'error', 
         duration: 2000 
       })
@@ -40,8 +41,14 @@ Page({
           password:this.data.password
         },
         success: res => {
-          console.log("返回结果%o", res)
+          console.log("[login] [返回结果] ", res)
           if (res.result.msg == "success") {
+            console.log("[全局数据] ", app.globalData.userInfo)
+            app.globalData.userInfo = {
+              student_id:this.data.account,
+              id:res.result.id,
+            }
+            console.log("[全局数据] ", app.globalData.userInfo)
             wx.showToast({ 
               title: '登录成功', 
               icon: 'success', 
@@ -61,7 +68,7 @@ Page({
         fail: err => {
           console.error('[云函数] [login] 调用失败', err)
           wx.showToast({ 
-            title: '请求错误，请重试', 
+            title: '异常，请重试', 
             icon: 'error', 
             duration: 2000
             })
