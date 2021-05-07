@@ -3,15 +3,15 @@
 
   <!--头部-->
   <view class="header">
-    <image class="header-avatar" src="https://i.loli.net/2021/05/01/DsYnxAElyjG8RNI.jpg"></image>
-    <label class="header-title">鬼灭小分队</label>
+    <image class="header-avatar" src="{{organization.organization_avatar}}"></image>
+    <label class="header-title">{{organization.organization_name}}</label>
   </view>
 
   <!--组织名称-->
   <view class="organization-cell">
     <label class="organization-cell-title">组织名称</label>
     <view class="organization-cell-content">
-      <label class="organization-cell-label">鬼灭小分队</label>
+      <label class="organization-cell-label">{{organization.organization_name}}</label>
     </view>
   </view>
   
@@ -19,7 +19,7 @@
   <navigator class="organization-cell" url="../organization/announcement/announcement" open-type="navigate">
     <label class="organization-cell-title">公告</label>
     <view class="organization-cell-content">
-      <label class="organization-cell-label">无限列车今晚上映!!!</label>
+      <label class="organization-cell-label">{{organization.announcement}}</label>
       <image class="organization-cell-more-icon" src="../../images/more.png"></image>
     </view>
   </navigator>
@@ -28,7 +28,7 @@
   <view class="organization-cell">
     <label class="organization-cell-title">负责人</label>
     <view class="organization-cell-content">
-      <label class="organization-cell-label">dawn</label>
+      <label class="organization-cell-label">{{organization.admin_name}}</label>
     </view>
   </view>
 
@@ -36,7 +36,7 @@
   <navigator class="organization-cell" url="../organization/member/member" open-type="navigate">
     <label class="organization-cell-title">成员</label>
     <view class="organization-cell-content" url="../im/im" open-type="navigate">
-      <label class="organization-cell-label">100人</label>
+      <label class="organization-cell-label">{{organization.organization_member_number}}人</label>
       <image class="organization-cell-more-icon" src="../../images/more.png"></image>
     </view>
   </navigator>

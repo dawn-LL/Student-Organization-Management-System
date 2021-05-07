@@ -9,12 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    organizations:[],
-    organization_cell:{
-      organization_name:"",
-      organization_avatar:"",
-      announcement:"",
-    }
+    organizations:[]
   },
 
   /**

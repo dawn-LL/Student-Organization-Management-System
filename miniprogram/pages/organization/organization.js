@@ -5,14 +5,30 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    organization:{
+      organization_name:"",
+      organization_avatar:"",
+      admin_id:"",
+      admin_name:"",
+      announcement:"",
+      organization_member_number:"",
+    }
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      organization : {
+        organization_name:options.organization_name,
+        organization_avatar:options.organization_avatar,
+        admin_id:options.admin_id,
+        admin_name:options.admin_name,
+        announcement:options.announcement,
+        organization_member_number:options.organization_member_number,
+      }
+    })
   },
 
   /**
