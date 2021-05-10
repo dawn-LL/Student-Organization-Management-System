@@ -43,7 +43,6 @@ Page({
         success: res => {
           console.log("[login] [返回结果] ", res)
           if (res.result.msg == "success") {
-            console.log("[全局数据] ", app.globalData.userInfo)
             app.globalData.userInfo = {
               student_id:this.data.account,
               id:res.result.id,

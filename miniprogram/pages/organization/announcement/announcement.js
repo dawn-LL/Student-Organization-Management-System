@@ -20,9 +20,11 @@ Page({
       }
     }).then(res=>{
       console.log("[公告][返回结果]", res)
+      let time = new Date()
       this.setData({
         organization_id:options.organization_id,
-        announcements:res.result.data.announcement
+        announcements:res.result.data.announcements
+
       })
     })
   },
