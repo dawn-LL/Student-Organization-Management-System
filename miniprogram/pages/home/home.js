@@ -27,6 +27,9 @@ Page({
         this.setData({
           organizations:res.result.data
         })
+      },
+      failed:res => {
+        console.log("[get-organization-list] [errMsg] ", res)
       }
     })
     

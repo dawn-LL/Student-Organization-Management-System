@@ -33,7 +33,7 @@
   </view>
 
   <!--成员-->
-  <navigator class="organization-cell" url="../organization/member/member" open-type="navigate">
+  <navigator class="organization-cell" url="../organization/member/member?organization_id={{organization.organization_id}}" open-type="navigate">
     <label class="organization-cell-title">成员</label>
     <view class="organization-cell-content" url="../im/im" open-type="navigate">
       <label class="organization-cell-label">{{organization.organization_member_number}}人</label>

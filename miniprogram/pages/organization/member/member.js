@@ -5,14 +5,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    organization_id:"",
+    member_list:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log("页面参数", options)
+    wx.cloud.callFunction({
+      name:'get-student-list',
+      data:{
+        organization_id:options.organization_id
+      },
+      success:res => {
+        console.log("[组织成员][返回结果]", res)
+        this.setData({
+          member_list:res.result,
+          organization_id:options.organization_id
+        })
+      }
+    })
   },
 
   /**

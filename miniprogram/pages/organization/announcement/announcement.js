@@ -13,7 +13,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    await wx.cloud.callFunction({
+    wx.cloud.callFunction({
       name:'get-organization-info',
       data:{
         id:options.organization_id
