@@ -2,11 +2,37 @@
 <view class="container">
   <image class="avatar" src="https://i.loli.net/2021/05/04/hR1jpPA3DiTsELr.jpg"></image>
   <view class="person-info">
-    <block wx:for="{{['姓名','性别','学号','学院','专业','年级','班级','简介']}}">
-      <view class="{{item == '简介'?'border-bottom':'person-info-cell '}}">
-        <text class="title">{{item}}</text>
-        <text class="content">{{index}}</text>
-      </view>
-    </block>
+    <view class="person-info-cell">
+        <text class="title">姓名</text>
+        <text class="content">{{userInfo.name}}</text>
+    </view>
+    <view class="person-info-cell">
+        <text class="title">性别</text>
+        <text class="content">{{userInfo.gender}}</text>
+    </view>
+    <view class="person-info-cell">
+        <text class="title">学号</text>
+        <text class="content">{{userInfo.student_id}}</text>
+    </view>
+    <view class="person-info-cell">
+        <text class="title">学院</text>
+        <text class="content">{{userInfo.college}}</text>
+    </view>
+    <view class="person-info-cell">
+        <text class="title">专业</text>
+        <text class="content">{{userInfo.major}}</text>
+    </view>
+    <view class="person-info-cell">
+        <text class="title">年级</text>
+        <text class="content">{{userInfo.grade}}</text>
+    </view>
+    <view class="person-info-cell">
+        <text class="title">班级</text>
+        <text class="content">{{userInfo.class}}</text>
+    </view>
+    <view class="border-bottom">
+        <text class="title">简介</text>
+        <text class="content">{{userInfo.introduction}}</text>
+    </view>
   </view>
 </view>

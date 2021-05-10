@@ -20,7 +20,7 @@ Page({
     wx.cloud.callFunction({
       name:'get-organization-list',
       data:{
-        'userInfo':getApp().globalData.userInfo
+        userInfo:getApp().globalData.userInfo
       },
       success:res => {
         console.log("[get-organization-list] [返回结果]", res)

@@ -5,14 +5,45 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    userInfo:{
+      name:"",
+      gender:"",
+      avatar:"",
+      student_id:"",
+      college:"",
+      major:"",
+      grade:"",
+      class:"",
+      introduction:"",
+    }
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.cloud.callFunction({
+      name:'get-student-info',
+      data:{
+        id:getApp().globalData.userInfo.id
+      },
+      success:res=>{
+        console.log("[我的][get-student-info]", res)
+        this.setData({
+          userInfo:{
+            name:res.result.data.name,
+            gender:"0",
+            avatar:res.result.data.avatar,
+            student_id:res.result.data.student_id,
+            college:"0",
+            major:"0",
+            grade:"0",
+            class:"0",
+            introduction:(res.result.data.introduction?res.result.data.introduction:"无"),
+          }
+        })
+      }
+    })
   },
 
   /**
