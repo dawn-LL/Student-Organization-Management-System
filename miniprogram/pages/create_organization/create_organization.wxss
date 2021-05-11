@@ -1,0 +1,70 @@
+/* pages/create_organization/create_organization.wxss */
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  margin-top: 60rpx;
+  margin-left: 60rpx;
+  margin-right: 60rpx;
+}
+
+.title {
+  font-size: 80rpx;
+}
+
+.tip {
+
+}
+
+.organization-name-input-view {
+  margin-top: 104rpx;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+}
+
+.organization-name {
+  margin-left: 60rpx;
+  font-size: 54rpx;
+}
+
+.input-view {
+  margin-left: 70rpx;
+}
+
+.line {
+  background: rgba(0, 0, 0, 0.1);
+  height: 1rpx;
+  margin-top: 52rpx;
+  margin-left: 60rpx;
+  margin-right: 60rpx;
+}
+
+.organization-avatar-view {
+  margin-top: 42rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.choose-avatar {
+  margin-left: 60rpx;
+  margin-right: 60rpx;
+  margin-top: 46rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.defualt-avatar {
+  width: 144rpx;
+  height: 144rpx;
+}
+
+.create-button-view {
+  margin-top: 80rpx;
+}

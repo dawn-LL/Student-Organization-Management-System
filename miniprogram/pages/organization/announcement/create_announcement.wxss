@@ -1,0 +1,15 @@
+/* pages/organization/announcement/create_announcement.wxss */
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  width: 100%;
+}
+
+.publish {
+  align-self: center;
+}

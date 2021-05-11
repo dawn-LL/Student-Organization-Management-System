@@ -3,7 +3,7 @@
 
   <view class="head">
     <label class="head-title-label">组织</label>
-      <view class="head-add-view">
+      <view class="head-add-view" bindtap="createOrganization">
         <image class="head-add-icon" src="../../images/add_group.png"></image>
         <label class="head-add-label">新建一个</label>
       </view>

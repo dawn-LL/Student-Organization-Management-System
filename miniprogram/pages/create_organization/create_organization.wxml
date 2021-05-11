@@ -1,0 +1,24 @@
+<!--pages/create_organization/create_organization.wxml-->
+<view class="container">
+  <view class="header">
+    <text class="title">组织名称和头像</text>
+    <text class="tip"></text>
+  </view>
+  <view class="organization-name-input-view">
+    <text class="organization-name">组织名称</text>
+    <input class="input-view" placeholder="填写名称（2-10个字）" bindtap="" />
+  </view>
+  <view class="line"></view>
+  <view class="organization-avatar-view">
+    <text class="organization-name">组织头像</text>
+    <view class="choose-avatar">
+      <image class="defualt-avatar" src="../../images/uploader.png"></image>
+      <image class="defualt-avatar" src="../../images/default_01.PNG"></image>
+      <image class="defualt-avatar" src="../../images/default_02.PNG"></image>
+      <image class="defualt-avatar" src="../../images/default_03.PNG"></image>
+    </view>
+  </view>
+  <view class="create-button-view"> 
+    <button class="create-button" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="">立即创建</button> 
+  </view>
+</view>
