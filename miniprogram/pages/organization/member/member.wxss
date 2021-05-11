@@ -1,4 +1,9 @@
 /* pages/organization/member/member.wxss */
+.container {
+  background:rgb(237, 237, 237);
+  height: 100vh;
+  width: 100%;
+}
 .alphabet-list .section-item{
   width: 100%;
   display: flex;
@@ -15,6 +20,7 @@
 
 .section-item-cells {
   padding-left: 35rpx;
+  background:white;
 }
 
 .section-item-cell {

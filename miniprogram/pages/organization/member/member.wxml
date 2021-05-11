@@ -1,16 +1,18 @@
 <!--pages/organization/member/member.wxml-->
-<scroll-view scroll-y="true" scroll-into-view="{{alpha}}">
-  <view class="alphabet-list">
-    <view wx:for="{{member_list}}" wx:key="id" id="{{item.alpha}}" class="section-item">
-      <!--首字母-->
-      <view class="section-item-header">{{item.alpha}}</view>
-        <!--该首字母的成员-->
-        <view wx:for="{{item.list}}" wx:key="id" wx:for-item="cell" wx:for-index="cellIndex" class="section-item-cells">
-          <view class="section-item-cell {{cellIndex != item.list.length - 1 ? 'border-bottom':''}}">
-            <image class='avatar' src='{{cell.avatar}}'></image>
-            <label class="name">{{cell.name}}</label>
+<view class="container">
+  <scroll-view scroll-y="true" scroll-into-view="{{alpha}}">
+    <view class="alphabet-list">
+      <view wx:for="{{member_list}}" wx:key="id" id="{{item.alpha}}" class="section-item">
+        <!--首字母-->
+        <view class="section-item-header">{{item.alpha}}</view>
+          <!--该首字母的成员-->
+          <view wx:for="{{item.list}}" wx:key="id" wx:for-item="cell" wx:for-index="cellIndex" class="section-item-cells">
+            <view class="section-item-cell {{cellIndex != item.list.length - 1 ? 'border-bottom':''}}">
+              <image class='avatar' src='{{cell.avatar}}'></image>
+              <label class="name">{{cell.name}}</label>
+            </view>
           </view>
-        </view>
+      </view>
     </view>
-  </view>
-</scroll-view>
+  </scroll-view>
+</view>

@@ -11,13 +11,13 @@
 
   <recycle-view class="organization-list" batch="{{batchSetRecycleData}}" id="recycleId">
     <recycle-item wx:for="{{organizations}}" wx:key="id" class="organization-cell">
-      <navigator url="../organization/organization?organization_id={{item._id}}&&organization_name={{item.organization_name}}&&organization_avatar={{item.organization_avatar}}&&announcement={{item.announcement.length==0 ? '暂无公告' : item.announcement[0]}}&&admin_id={{item.admin}}&&admin_name={{item.admin_name}}&&organization_member_number={{item.organization_member.length}}" open-type="navigate" class="organization-cell-content">
+      <navigator url="../organization/organization?organization_id={{item._id}}&&organization_name={{item.organization_name}}&&organization_avatar={{item.organization_avatar}}&&announcement={{item.announcements.length==0 ? '暂无公告' : item.announcements[0].content}}&&admin_id={{item.admin}}&&admin_name={{item.admin_name}}&&organization_member_number={{item.organization_member.length}}" open-type="navigate" class="organization-cell-content">
         <image class="organization-avatar" src="{{item.organization_avatar}}"></image>
         <view class="organization-info">
           <view class="organization-info-head">
             <label class="organization-info-name">{{item.organization_name}}</label>
           </view>
-          <label class="organization-news">{{item.announcement.length > 0 ? item.announcement[0]:"暂无公告"}}</label>
+          <label class="organization-news">{{item.announcements.length > 0 ? item.announcements[0].content:"暂无公告"}}</label>
         </view>
       </navigator>
     </recycle-item>
