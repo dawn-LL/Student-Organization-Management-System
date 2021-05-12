@@ -20,16 +20,25 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      organization : {
-        organization_id:options.organization_id,
-        organization_name:options.organization_name,
-        organization_avatar:options.organization_avatar,
-        admin_id:options.admin_id,
-        admin_name:options.admin_name,
-        announcement:options.announcement,
-        organization_member_number:options.organization_member_number,
-      }
+    var organizationData = {
+      organization_id:options.organization_id,
+      organization_name:options.organization_name,
+      organization_avatar:options.organization_avatar,
+      admin_id:options.admin_id,
+      announcement:options.announcement,
+      organization_member_number:options.organization_member_number,
+    }
+    wx.cloud.callFunction({
+      name:'get-student-info',
+      data:{
+        id:options.admin_id
+      },
+    }).then(res => {
+      console.log("[organization][amdin_info]", res)
+      organizationData.admin_name = res.result.data.name
+      this.setData({
+        organization : organizationData
+      })
     })
   },
 

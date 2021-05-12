@@ -29,17 +29,13 @@ Page({
       name:'get-organization-list',
       data:{
         userInfo:getApp().globalData.userInfo
-      },
-      success:res => {
+      }
+    }).then(res => {
         console.log("[get-organization-list] [返回结果]", res)
         this.setData({
           organizations:res.result.data
         })
-      },
-      failed:res => {
-        console.log("[get-organization-list] [errMsg] ", res)
-      }
-    })
+      })
     
     // 管理 recycle-view 的数据
     var ctx = createRecycleContext({

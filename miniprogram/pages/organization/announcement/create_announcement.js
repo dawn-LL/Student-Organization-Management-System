@@ -39,7 +39,7 @@ Page({
         //公告列表页面（只更新公告列表）
         let announcementPage = pages[pages.length - 2];
         let originalAnnouncementData = announcementPage.data.announcements
-        originalAnnouncementData.unshift(announcement)
+        originalAnnouncementData.insert(0, announcement)
         announcementPage.setData({
           announcements:originalAnnouncementData
         })
