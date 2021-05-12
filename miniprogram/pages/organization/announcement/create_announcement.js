@@ -38,10 +38,15 @@ Page({
         let pages = getCurrentPages()
         //公告列表页面（只更新公告列表）
         let announcementPage = pages[pages.length - 2];
-        let originalAnnouncementData = announcementPage.data.announcements
-        originalAnnouncementData.insert(0, announcement)
+        let originalAnnouncementData = announcementPage.data
+        console.log("[原公告列表数据]", originalAnnouncementData)
+        if (originalAnnouncementData.announcements == undefined) {
+          originalAnnouncementData.announcements = [announcement]
+        } else {
+          originalAnnouncementData.announcements.unshift(announcement)
+        }
         announcementPage.setData({
-          announcements:originalAnnouncementData
+          announcements:originalAnnouncementData.announcements
         })
         //组织页（只更新公告）
         let organizationPage = pages[pages.length - 3]
