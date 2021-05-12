@@ -16,10 +16,6 @@
   font-size: 80rpx;
 }
 
-.tip {
-
-}
-
 .organization-name-input-view {
   margin-top: 104rpx;
   display: flex;
@@ -35,6 +31,7 @@
 
 .input-view {
   margin-left: 70rpx;
+  text-align: right;
 }
 
 .line {

@@ -1,13 +1,15 @@
 /* pages/organization/announcement/create_announcement.wxss */
 .container {
-  width: 100%;
+  margin: 0;
+  width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-.input {
+.textarea {
   width: 100%;
+  margin-top: 20rpx;
 }
 
 .publish {

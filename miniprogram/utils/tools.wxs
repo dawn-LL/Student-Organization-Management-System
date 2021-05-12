@@ -1,6 +1,5 @@
 var toDate = function(time) { 
   var date = getDate(time)
-  console.log("time:",time,"date:",date)
   Y = date.getFullYear() + '-';
   M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
   D = date.getDate() + ' ';

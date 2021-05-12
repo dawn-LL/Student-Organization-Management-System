@@ -10,21 +10,28 @@ Page({
   },
 
   /**
+   * 跳转创建公告页面
+   */
+  createNewAnnouncement:function(e) {
+    wx.navigateTo({
+      url: '../announcement/create_announcement?organization_id=' + this.data.organization_id,
+    })
+  },
+
+  /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.data.organization_id = options.organization_id
     wx.cloud.callFunction({
       name:'get-organization-info',
       data:{
         id:options.organization_id
       }
-    }).then(res=>{
+    }).then(res => {
       console.log("[公告][返回结果]", res)
-      let time = new Date()
       this.setData({
-        organization_id:options.organization_id,
         announcements:res.result.data.announcements
-
       })
     })
   },
@@ -40,7 +47,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    
   },
 
   /**

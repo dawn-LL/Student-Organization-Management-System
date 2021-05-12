@@ -1,13 +1,12 @@
 {
   "pages": [
-    "pages/organization/announcement/create_announcement",
     "pages/login/login",
     "pages/create_organization/create_organization",
     "pages/my/my",
     "pages/home/home",
     "pages/organization/organization",
     "pages/organization/announcement/announcement",
-    
+    "pages/organization/announcement/create_announcement",
     "pages/organization/member/member",
     "pages/room/room"
   ],

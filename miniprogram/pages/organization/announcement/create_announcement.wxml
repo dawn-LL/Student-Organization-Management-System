@@ -1,5 +1,5 @@
 <!--pages/organization/announcement/create_announcement.wxml-->
 <view class="container">
-  <textarea class="textarea" placeholder="请输入公告内容..." auto-focus="true" confirm-type="done" bindtap="" />
-  <button class="publish" type="primary" size="mini" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="">发布</button> 
+  <textarea class="textarea" placeholder="请输入公告内容..." auto-focus="true" bindinput="announcementInput" />
+  <button class="publish" type="primary" size="mini" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="publishAnnouncement">发布</button>
 </view>

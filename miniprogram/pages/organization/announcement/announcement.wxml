@@ -12,6 +12,6 @@
   </scroll-view>
   <view wx:if="{{announcements.length == 0}}">暂无公告</view>
   <view bindtap="">
-    <image class="add-icon" src="../../../images/add-announcement.png"></image>
+    <image class="add-icon" src="../../../images/add-announcement.png" bindtap="createNewAnnouncement"></image>
   </view>
 </view>

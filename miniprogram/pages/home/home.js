@@ -1,7 +1,5 @@
 // pages/home/home.js
 
-// 数据库
-const db = wx.cloud.database()
 const createRecycleContext = require('miniprogram-recycle-view')
 Page({
 
@@ -67,7 +65,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    console.log("on show")
+    this.onLoad()
   },
 
   /**

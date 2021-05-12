@@ -17,7 +17,8 @@ App({
     this.globalData = {
       userInfo:{
         student_id:"",
-        id:""
+        id:"",
+        name:"",
       }
     }
   }
