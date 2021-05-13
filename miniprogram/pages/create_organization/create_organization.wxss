@@ -57,9 +57,14 @@
   justify-content: space-around;
 }
 
-.defualt-avatar {
+.default-avatar {
   width: 144rpx;
   height: 144rpx;
+  border-radius: 72rpx;
+}
+
+.selected {
+  border: 2px inset blue;
 }
 
 .create-button-view {

@@ -6,19 +6,18 @@
   </view>
   <view class="organization-name-input-view">
     <text class="organization-name">组织名称</text>
-    <input class="input-view" placeholder="填写名称（2-10个字）" bindtap="" />
+    <input class="input-view" placeholder="填写名称（2-10个字）" bindinput="organizationNameInput" />
   </view>
   <view class="line"></view>
   <view class="organization-avatar-view">
     <text class="organization-name">组织头像</text>
     <view class="choose-avatar">
-      <image class="defualt-avatar" src="../../images/uploader.png"></image>
-      <image class="defualt-avatar" src="../../images/default_01.PNG"></image>
-      <image class="defualt-avatar" src="../../images/default_02.PNG"></image>
-      <image class="defualt-avatar" src="../../images/default_03.PNG"></image>
+      <block wx:for="{{defaultImages}}">
+        <image class="default-avatar {{selectedImageIndex == index ? 'selected' : ''}}" src="{{item}}" id="{{index}}" bindtap="{{index == 0? 'uploadImage' : 'chooseDefaultImage'}}"></image>
+      </block>
     </view>
   </view>
   <view class="create-button-view"> 
-    <button class="create-button" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="">立即创建</button> 
+    <button class="create-button" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="createOrganization">立即创建</button> 
   </view>
 </view>
