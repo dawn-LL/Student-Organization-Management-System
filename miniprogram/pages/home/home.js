@@ -13,7 +13,6 @@ Page({
   /**
    * 创建一个新组织
    */
-
   createOrganization:function(e) {
     wx.navigateTo({
       url: '../create_organization/create_organization',

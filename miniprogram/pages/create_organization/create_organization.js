@@ -72,7 +72,7 @@ Page({
   chooseDefaultImage:function(e) {
     console.log("[image00]", e)
     this.setData({
-      selectedImageIndex:e.target.id
+      selectedImageIndex:e.currentTarget.id
     })
     this.updateDisabled()
   },
