@@ -94,7 +94,8 @@ Page({
         console.log("[组织成员][返回结果]", res)
         this.setData({
           member_list:res.result,
-          organization_id:e.organization_id
+          organization_id:e.organization_id,
+          loading:false
         })
       }
     })
@@ -106,10 +107,6 @@ Page({
   onLoad: function (options) {
     this.requestAlphaList({
       organization_id:options.organization_id
-    }).then(res => {
-      this.setData({
-        loading:false
-      })
     })
   },
 
