@@ -31,7 +31,7 @@ Page({
       title:title,
       content:"",
       editable:true,
-      cancelColor: 'F1F1F1',
+      cancelColor: '#AAAAAA',
       success:res => {
         if (res.confirm) {
           if (res.content.length <= 0) {

@@ -53,6 +53,6 @@
 
   <!--退出组织-->
   <view class="exit-organization">
-    <button class="exit-organization-button" type="warn" plain="false" bindtap="exit-organization">退出组织</button>
+    <button class="exit-organization-button" type="warn" plain="false" bindtap="exitOrganization">退出组织</button>
   </view>
 </view>
