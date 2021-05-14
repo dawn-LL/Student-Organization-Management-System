@@ -1,0 +1,61 @@
+<!--
+此文件为开发者工具生成，生成时间: 2021/5/14 上午8:28:08
+使用方法：
+在 /Users/bytedance/WeChatProjects/miniprogram-1/miniprogram/pages/organization/organization.wxml 引入模板
+
+```
+<import src="organization.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 /Users/bytedance/WeChatProjects/miniprogram-1/miniprogram/pages/organization/organization.wxss 中引入样式
+```
+@import "./organization.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="container">
+      <view class="header">
+        <image class="header-avatar sk-image"></image>
+        <label class="header-title sk-transparent sk-text-14-2857-604 sk-text">恕瑞玛杯卫冕冠军</label>
+      </view>
+      <view class="organization-cell" style="border: none;">
+        <label class="organization-cell-title sk-transparent sk-text-14-2857-124 sk-text">组织名称</label>
+        <view class="organization-cell-content">
+          <label class="organization-cell-label sk-transparent sk-text-14-2857-857 sk-text">恕瑞玛杯卫冕冠军</label>
+        </view>
+      </view>
+      <navigator class="organization-cell" open-type="navigate" style="border: none;">
+        <label class="organization-cell-title sk-transparent sk-text-14-2857-851 sk-text">公告</label>
+        <view class="organization-cell-content">
+          <label class="organization-cell-label sk-transparent sk-text-14-2857-872 sk-text">哈哈哈</label>
+          <image class="organization-cell-more-icon sk-image"></image>
+        </view>
+      </navigator>
+      <view class="organization-cell" style="border: none;">
+        <label class="organization-cell-title sk-transparent sk-text-14-2857-577 sk-text">负责人</label>
+        <view class="organization-cell-content">
+          <label class="organization-cell-label sk-transparent sk-text-14-2857-833 sk-text">胡大包</label>
+        </view>
+      </view>
+      <navigator class="organization-cell" open-type="navigate" style="border: none;">
+        <label class="organization-cell-title sk-transparent sk-text-14-2857-963 sk-text">成员</label>
+        <view class="organization-cell-content">
+          <label class="organization-cell-label sk-transparent sk-text-14-2857-872 sk-text">5人</label>
+          <image class="organization-cell-more-icon sk-image"></image>
+        </view>
+      </navigator>
+      <view class="organization-chat-room" style="border: none;">
+        <navigator class="organization-chat-room-text" open-type="navigate">
+          <label class="sk-transparent sk-text-33-6538-230 sk-text" style="background-position-x: 50%;">进入聊天室</label>
+        </navigator>
+      </view>
+      <view class="exit-organization">
+        <button class="exit-organization-button sk-transparent sk-button sk-pseudo sk-pseudo-circle" plain="true" type="warn" style="border: none;">退出组织</button>
+      </view>
+    </view>
+  </view>
+</template>

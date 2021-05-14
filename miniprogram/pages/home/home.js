@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    organizations:[]
+    organizations:[],
+    loading:true,
   },
 
   /**
@@ -32,7 +33,8 @@ Page({
     }).then(res => {
         console.log("[get-organization-list] [返回结果]", res)
         this.setData({
-          organizations:res.result.data
+          organizations:res.result.data,
+          loading:false
         })
       })
     
@@ -60,7 +62,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    console.log("on show")
     this.onLoad()
   },
 
@@ -68,7 +69,9 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    this.setData({
+      loading:false
+    })
   },
 
   /**

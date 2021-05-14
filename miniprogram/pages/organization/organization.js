@@ -13,7 +13,8 @@ Page({
       admin_name:"",
       announcement:"",
       organization_member_number:"",
-    }
+    },
+    loading:true
   },
 
   /**
@@ -37,7 +38,8 @@ Page({
       console.log("[organization][amdin_info]", res)
       organizationData.admin_name = res.result.data.name
       this.setData({
-        organization : organizationData
+        organization : organizationData,
+        loading:false
       })
     })
   },

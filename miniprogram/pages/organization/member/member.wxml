@@ -1,4 +1,7 @@
 <!--pages/organization/member/member.wxml-->
+<import src="member.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+
 <view class="container">
   <scroll-view scroll-y="true" scroll-into-view="{{alpha}}">
     <view class="section-item">

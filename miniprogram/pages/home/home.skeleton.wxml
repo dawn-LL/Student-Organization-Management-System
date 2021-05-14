@@ -1,0 +1,95 @@
+<!--
+此文件为开发者工具生成，生成时间: 2021/5/14 上午8:26:50
+使用方法：
+在 /Users/bytedance/WeChatProjects/miniprogram-1/miniprogram/pages/home/home.wxml 引入模板
+
+```
+<import src="home.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 /Users/bytedance/WeChatProjects/miniprogram-1/miniprogram/pages/home/home.wxss 中引入样式
+```
+@import "./home.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="container">
+      <view class="head">
+        <label class="head-title-label sk-transparent sk-text-14-2857-525 sk-text">组织</label>
+        <view class="head-add-view">
+          <image class="head-add-icon sk-image"></image>
+          <label class="head-add-label sk-transparent sk-text-14-2857-362 sk-text" style="background-position-x: 100%;">新建一个</label>
+        </view>
+      </view>
+      <view is="miniprogram_npm/miniprogram-recycle-view/recycle-view" class="organization-list" id="recycleId">
+        <view class="view--wrap" style="height:724px;width:375px;transform:translateZ(0);-webkit-transform:translateZ(0);">
+          <scroll-view scroll-anchoring="true" class="view--content" lower-threshold="50" scroll-into-view="true" scroll-top="0" scroll-y="true" style="height:100%;position: relative;" throttle="true" upper-threshold="50">
+            <view style="position: absolute;z-index:1;width:100%;left: 0;top: 0;opacity: 0;visibility: hidden;"></view>
+            <view class="view--slot-before" style="height:0px"></view>
+            <view style="position:relative;width:100%;z-index:10;background: url(&quot;&quot;) repeat;height:0px;">
+              <view style="position: absolute;left:0;width:100%;top:0px;">
+                <view is="miniprogram_npm/miniprogram-recycle-view/recycle-item" class="organization-cell">
+                  <view class="item--wx-recycle-item">
+                    <navigator class="organization-cell-content" open-type="navigate">
+                      <image class="organization-avatar sk-image"></image>
+                      <view class="organization-info">
+                        <view class="organization-info-head">
+                          <label class="organization-info-name sk-transparent sk-text-14-2857-827 sk-text">鬼灭小分队</label>
+                        </view>
+                        <label class="organization-news sk-transparent sk-text-14-2857-927 sk-text">无限列车今晚上映</label>
+                      </view>
+                    </navigator>
+                  </view>
+                </view>
+                <view is="miniprogram_npm/miniprogram-recycle-view/recycle-item" class="organization-cell">
+                  <view class="item--wx-recycle-item">
+                    <navigator class="organization-cell-content" open-type="navigate">
+                      <image class="organization-avatar sk-image"></image>
+                      <view class="organization-info">
+                        <view class="organization-info-head">
+                          <label class="organization-info-name sk-transparent sk-text-14-2857-721 sk-text">恕瑞玛杯卫冕冠军</label>
+                        </view>
+                        <label class="organization-news sk-transparent sk-text-14-2857-709 sk-text">哈哈哈</label>
+                      </view>
+                    </navigator>
+                  </view>
+                </view>
+                <view is="miniprogram_npm/miniprogram-recycle-view/recycle-item" class="organization-cell">
+                  <view class="item--wx-recycle-item">
+                    <navigator class="organization-cell-content" open-type="navigate">
+                      <image class="organization-avatar sk-image"></image>
+                      <view class="organization-info">
+                        <view class="organization-info-head">
+                          <label class="organization-info-name sk-transparent sk-text-14-2857-227 sk-text">哈哈</label>
+                        </view>
+                        <label class="organization-news sk-transparent sk-text-14-2857-462 sk-text">暂无公告</label>
+                      </view>
+                    </navigator>
+                  </view>
+                </view>
+                <view is="miniprogram_npm/miniprogram-recycle-view/recycle-item" class="organization-cell">
+                  <view class="item--wx-recycle-item">
+                    <navigator class="organization-cell-content" open-type="navigate">
+                      <image class="organization-avatar sk-image"></image>
+                      <view class="organization-info">
+                        <view class="organization-info-head">
+                          <label class="organization-info-name sk-transparent sk-text-14-2857-911 sk-text">hhhh</label>
+                        </view>
+                        <label class="organization-news sk-transparent sk-text-14-2857-488 sk-text">暂无公告</label>
+                      </view>
+                    </navigator>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view class="view--slot-after" style="height:0px"></view>
+          </scroll-view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

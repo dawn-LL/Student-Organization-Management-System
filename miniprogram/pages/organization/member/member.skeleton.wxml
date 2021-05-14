@@ -1,0 +1,102 @@
+<!--
+此文件为开发者工具生成，生成时间: 2021/5/14 上午8:28:49
+使用方法：
+在 /Users/bytedance/WeChatProjects/miniprogram-1/miniprogram/pages/organization/member/member.wxml 引入模板
+
+```
+<import src="member.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 /Users/bytedance/WeChatProjects/miniprogram-1/miniprogram/pages/organization/member/member.wxss 中引入样式
+```
+@import "./member.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="container">
+      <scroll-view scroll-into-view="true" scroll-y="true">
+        <view class="section-item">
+          <view class="section-item-cells">
+            <view class="section-item-cell border-bottom sk-pseudo sk-pseudo-circle" id="0">
+              <image class="avatar sk-image"></image>
+              <label class="name sk-transparent sk-text-14-2857-234 sk-text">添加成员</label>
+            </view>
+          </view>
+          <view class="section-item-cells">
+            <view class="section-item-cell border-bottom sk-pseudo sk-pseudo-circle" id="1">
+              <image class="avatar sk-image"></image>
+              <label class="name sk-transparent sk-text-14-2857-975 sk-text">移除成员</label>
+            </view>
+          </view>
+        </view>
+        <view class="section-item" id="c">
+          <view class="section-item-header sk-transparent sk-text-14-2857-976 sk-text">c</view>
+          <view class="section-item-cells">
+            <view class="section-item-cell">
+              <image class="avatar sk-image"></image>
+              <label class="name sk-transparent sk-text-14-2857-929 sk-text">崔脆脆</label>
+            </view>
+          </view>
+        </view>
+        <view class="section-item" id="h">
+          <view class="section-item-header sk-transparent sk-text-14-2857-552 sk-text">h</view>
+          <view class="section-item-cells">
+            <view class="section-item-cell border-bottom sk-pseudo sk-pseudo-circle">
+              <image class="avatar sk-image"></image>
+              <label class="name sk-transparent sk-text-14-2857-434 sk-text">贺大明</label>
+            </view>
+          </view>
+          <view class="section-item-cells">
+            <view class="section-item-cell">
+              <image class="avatar sk-image"></image>
+              <label class="name sk-transparent sk-text-14-2857-834 sk-text">胡大包</label>
+            </view>
+          </view>
+        </view>
+        <view class="section-item" id="l">
+          <view class="section-item-header sk-transparent sk-text-14-2857-596 sk-text">l</view>
+          <view class="section-item-cells">
+            <view class="section-item-cell border-bottom sk-pseudo sk-pseudo-circle">
+              <image class="avatar sk-image"></image>
+              <label class="name sk-transparent sk-text-14-2857-119 sk-text">李磊</label>
+            </view>
+          </view>
+          <view class="section-item-cells">
+            <view class="section-item-cell">
+              <image class="avatar sk-image"></image>
+              <label class="name sk-transparent sk-text-14-2857-642 sk-text">李小伟</label>
+            </view>
+          </view>
+        </view>
+        <view class="section-item" id="w">
+          <view class="section-item-header sk-transparent sk-text-14-2857-930 sk-text">w</view>
+          <view class="section-item-cells">
+            <view class="section-item-cell">
+              <image class="avatar sk-image"></image>
+              <label class="name sk-transparent sk-text-14-2857-175 sk-text">王小猪</label>
+            </view>
+          </view>
+        </view>
+        <view class="section-item" id="y">
+          <view class="section-item-header sk-transparent sk-text-14-2857-232 sk-text">y</view>
+          <view class="section-item-cells">
+            <view class="section-item-cell border-bottom sk-pseudo sk-pseudo-circle">
+              <image class="avatar sk-image"></image>
+              <label class="name sk-transparent sk-text-14-2857-574 sk-text">于小明</label>
+            </view>
+          </view>
+          <view class="section-item-cells">
+            <view class="section-item-cell">
+              <image class="avatar sk-image"></image>
+              <label class="name sk-transparent sk-text-14-2857-968 sk-text">袁莉莉</label>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</template>

@@ -1,4 +1,6 @@
 /* pages/organization/member/member.wxss */
+@import "./member.skeleton.wxss";
+
 .container {
   background:rgb(237, 237, 237);
   height: 100vh;

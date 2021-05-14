@@ -13,7 +13,8 @@ Page({
     },{
       name:'移除成员',
       avatar:'../../../images/remove_member.png',
-    }]
+    }],
+    loading:true,
   },
 
   /**
@@ -105,6 +106,10 @@ Page({
   onLoad: function (options) {
     this.requestAlphaList({
       organization_id:options.organization_id
+    }).then(res => {
+      this.setData({
+        loading:false
+      })
     })
   },
 

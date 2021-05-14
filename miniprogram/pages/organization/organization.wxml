@@ -1,4 +1,7 @@
 <!--pages/organization/organization.wxml-->
+<import src="organization.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+
 <view class="container" >
 
   <!--头部-->
