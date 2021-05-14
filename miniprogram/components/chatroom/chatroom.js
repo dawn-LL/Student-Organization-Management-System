@@ -11,18 +11,12 @@ Component({
     groupId: String,
     groupName: String,
     userInfo: Object,
-    onGetUserInfo: {
-      type: Function,
-    },
-    getOpenID: {
-      type: Function,
-    },
+    userId:String,
   },
 
   data: {
     chats: [],
     textInputValue: '',
-    openId: '',
     scrollTop: 0,
     scrollToMessage: '',
     hasKeyboard: false,
@@ -33,21 +27,16 @@ Component({
       this.properties.onGetUserInfo(e)
     },
 
-    getOpenID() { 
-      return this.properties.getOpenID() 
-    },
-
     mergeCommonCriteria(criteria) {
       return {
-        groupId: this.data.groupId,
+        groupId: this.properties.groupId,
         ...criteria,
       }
     },
 
     async initRoom() {
       this.try(async () => {
-        await this.initOpenID()
-
+        console.log("[init room][properties info]", this.properties)
         const { envId, collection } = this.properties
         this.db = wx.cloud.database({
           env: envId,
@@ -55,7 +44,7 @@ Component({
         const db = this.db
         const _ = db.command
 
-        const { data: initList } = await db.collection(collection).where(this.mergeCommonCriteria()).orderBy('sendTimeTS', 'desc').get()
+        const { data: initList } = await db.collection(collection).where(this.mergeCommonCriteria()).orderBy('sendTimeTS' , 'desc').get()
 
         console.log('init query chats', initList)
 
@@ -70,23 +59,13 @@ Component({
       }, '初始化失败')
     },
 
-    async initOpenID() {
-      return this.try(async () => {
-        const openId = await this.getOpenID()
-
-        this.setData({
-          openId,
-        })
-      }, '初始化 openId 失败')
-    },
-
     async initWatch(criteria) {
       this.try(() => {
         const { collection } = this.properties
         const db = this.db
         const _ = db.command
 
-        console.warn(`开始监听`, criteria)
+        console.warn("[开始监听]", criteria)
         this.messageListener = db.collection(collection).where(this.mergeCommonCriteria(criteria)).watch({
           onChange: this.onRealtimeMessageSnapshot.bind(this),
           onError: e => {
@@ -105,9 +84,12 @@ Component({
         })
       }, '初始化监听失败')
     },
-
+    /**
+     * 收到消息处理
+     * @param {*} snapshot 
+     */
     onRealtimeMessageSnapshot(snapshot) {
-      console.warn(`收到消息`, snapshot)
+      console.warn("[收到消息]", snapshot)
 
       if (snapshot.type === 'init') {
         this.setData({
@@ -125,7 +107,7 @@ Component({
         for (const docChange of snapshot.docChanges) {
           switch (docChange.queueType) {
             case 'enqueue': {
-              hasOthersMessage = docChange.doc._openid !== this.data.openId
+              hasOthersMessage = docChange.doc.user_id !== this.properties.userId
               const ind = chats.findIndex(chat => chat._id === docChange.doc._id)
               if (ind > -1) {
                 if (chats[ind].msgType === 'image' && chats[ind].tempFilePath) {
@@ -151,6 +133,10 @@ Component({
       }
     },
 
+    /**
+     * 发送消息处理
+     * @param {*} e 
+     */
     async onConfirmSendText(e) {
       this.try(async () => {
         if (!e.detail.value) {
@@ -163,13 +149,14 @@ Component({
 
         const doc = {
           _id: `${Math.random()}_${Date.now()}`,
-          groupId: this.data.groupId,
-          avatar: this.data.userInfo.avatarUrl,
-          nickName: this.data.userInfo.nickName,
+          groupId: this.properties.groupId,
+          user_id:this.properties.userInfo.id,
+          avatar: this.properties.userInfo.avatar,
+          name: this.properties.userInfo.name,
           msgType: 'text',
           textContent: e.detail.value,
           sendTime: new Date(),
-          sendTimeTS: Date.now(), // fallback
+          sendTimeTS: Date.now(), 
         }
 
         this.setData({
@@ -178,7 +165,6 @@ Component({
             ...this.data.chats,
             {
               ...doc,
-              _openid: this.data.openId,
               writeStatus: 'pending',
             },
           ],
@@ -187,6 +173,8 @@ Component({
 
         await db.collection(collection).add({
           data: doc,
+        }).then(res => {
+          console.log("[消息添加到数据库]", res)
         })
 
         this.setData({
@@ -199,6 +187,7 @@ Component({
             } else return chat
           }),
         })
+        console.log("[发送完成]", this.data.chats)
       }, '发送文字失败')
     },
 
@@ -210,12 +199,13 @@ Component({
           const { envId, collection } = this.properties
           const doc = {
             _id: `${Math.random()}_${Date.now()}`,
-            groupId: this.data.groupId,
-            avatar: this.data.userInfo.avatarUrl,
-            nickName: this.data.userInfo.nickName,
+            user_id:this.properties.userInfo.id,
+            groupId: this.properties.groupId,
+            avatar: this.properties.userInfo.avatar,
+            name: this.properties.userInfo.name,
             msgType: 'image',
             sendTime: new Date(),
-            sendTimeTS: Date.now(), // fallback
+            sendTimeTS: Date.now(),
           }
 
           this.setData({
@@ -223,7 +213,6 @@ Component({
               ...this.data.chats,
               {
                 ...doc,
-                _openid: this.data.openId,
                 tempFilePath: res.tempFilePaths[0],
                 writeStatus: 0,
               },
@@ -232,7 +221,7 @@ Component({
           this.scrollToBottom(true)
 
           const uploadTask = wx.cloud.uploadFile({
-            cloudPath: `${this.data.openId}/${Math.random()}_${Date.now()}.${res.tempFilePaths[0].match(/\.(\w+)$/)[1]}`,
+            cloudPath: `${this.properties.userId}/${Math.random()}_${Date.now()}.${res.tempFilePaths[0].match(/\.(\w+)$/)[1]}`,
             filePath: res.tempFilePaths[0],
             config: {
               env: envId,

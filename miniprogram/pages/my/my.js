@@ -1,7 +1,6 @@
 // pages/my/my.js
 const globalData = getApp().globalData
 Page({
-
   /**
    * 页面的初始数据
    */

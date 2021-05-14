@@ -50,7 +50,8 @@ Page({
             app.globalData.userInfo = {
               student_id:this.data.account,
               id:res.result.id,
-              name:res.result.name
+              name:res.result.name,
+              avatar:res.result.avatar,
             }
             console.log("[全局数据] ", app.globalData.userInfo)
             this.setData({

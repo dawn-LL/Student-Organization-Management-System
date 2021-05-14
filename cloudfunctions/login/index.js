@@ -33,7 +33,8 @@ exports.main = async (event, context) => {
     return {
       msg:"success",
       name:res.data[0].name,
-      id:res.data[0]._id
+      id:res.data[0]._id,
+      avatar:res.data[0].avatar,
     }
   } else {
     return {msg:"密码错误"}

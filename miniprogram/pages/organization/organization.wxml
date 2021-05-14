@@ -46,7 +46,7 @@
 
   <!--聊天室-->
   <view class="organization-chat-room">
-    <navigator url="../room/room" open-type="navigate" class="organization-chat-room-text">
+    <navigator url="../room/room?organization_id={{organization.organization_id}}&organization_name={{organization.organization_name}}" open-type="navigate" class="organization-chat-room-text">
       <label>进入聊天室</label>
     </navigator>
   </view>

@@ -16,9 +16,10 @@ App({
 
     this.globalData = {
       userInfo:{
-        student_id:"",
-        id:"",
-        name:"",
+        student_id:"",  //学号
+        id:"",          //数据表记录id
+        name:"",        //名称
+        avatar:"",      //头像url
       }
     }
   }

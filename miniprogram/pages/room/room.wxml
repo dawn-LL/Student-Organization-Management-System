@@ -6,7 +6,6 @@
     groupId="{{chatRoomGroupId}}"
     groupName="{{chatRoomGroupName}}"
     userInfo="{{userInfo}}"
-    onGetUserInfo="{{onGetUserInfo}}"
-    getOpenID="{{getOpenID}}"
+    userId="{{userId}}"
   ></chatroom>
 </view>
