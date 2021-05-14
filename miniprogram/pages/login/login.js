@@ -8,6 +8,7 @@ Page({
   data: {
     account:'',
     password:'',
+    loading:false,
   },
 
   // 获取输入账号 
@@ -34,6 +35,9 @@ Page({
       })
     } else {
       //do request
+      this.setData({
+        loading:true
+      })
       wx.cloud.callFunction({
         name: 'login',
         data: {
@@ -41,7 +45,7 @@ Page({
           password:this.data.password
         },
         success: res => {
-          console.log("[login] [返回结果] ", res)
+          console.log("[请求登陆] [返回结果] ", res)
           if (res.result.msg == "success") {
             app.globalData.userInfo = {
               student_id:this.data.account,
@@ -49,29 +53,39 @@ Page({
               name:res.result.name
             }
             console.log("[全局数据] ", app.globalData.userInfo)
+            this.setData({
+              loading:false,
+              account:"",
+              password:"",
+            })
             wx.showToast({ 
               title: '登录成功', 
-              icon: 'success', 
-              duration: 2000,
+              icon: 'success',
               complete: wx.switchTab({
                 url: '../home/home'
               })
             })
           } else {
+            this.setData({
+              loading:false
+            })
             wx.showToast({
               title: res.result.msg, 
               icon: 'error', 
-              duration: 2000 
-              })
+              duration: 2000 ,
+            })
           }
         },
         fail: err => {
           console.error('[云函数] [login] 调用失败', err)
+          this.setData({
+            loading:false
+          })
           wx.showToast({ 
             title: '异常，请重试', 
             icon: 'error', 
             duration: 2000
-            })
+          })
         }
       })
     }

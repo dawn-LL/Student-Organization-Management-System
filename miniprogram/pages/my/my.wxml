@@ -35,4 +35,5 @@
         <text class="content">{{userInfo.introduction}}</text>
     </view>
   </view>
+  <button class="unloginBtn" type="warn" bindtap="unlogin">退出登陆</button>
 </view>

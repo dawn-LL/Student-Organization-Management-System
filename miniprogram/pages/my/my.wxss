@@ -7,8 +7,8 @@
 }
 
 .avatar {
-  width: 50%;
-  height: 50vw;
+  width: 40%;
+  height: 40vw;
 }
 
 .person-info {
@@ -16,15 +16,15 @@
   display: flex;
   flex-direction: column;
   background: white;
-  margin-top: 27px;
+  margin-top: 50rpx;
   border: 0.5px solid rgba(0, 0, 0, 0.1);
 }
 
 .person-info-cell {
   position: relative;
   border:none;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
 }
 
 .person-info-cell:after {
@@ -33,21 +33,25 @@
   bottom: 0;
   background: rgba(0, 0, 0, 0.1);
   width: 90%;
-  left: 17px;
-  height: 1px;
+  left: 34rpx;
+  height: 2rpx;
 }
 
 .border-bottom {
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
   position: relative;
   border:none;
 }
 
 .title {
-  margin-left: 17px;
+  margin-left: 34rpx;
 }
 
 .content {
-  margin-left: 75px;
+  margin-left: 150rpx;
+}
+
+.unloginBtn {
+  margin-top: 20rpx;
 }

@@ -25,7 +25,7 @@
 
     <!--按钮--> 
     <view class="loginBtnView"> 
-      <button class="loginBtn" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="loginRequest">登录</button> 
+      <button class="loginBtn" type="primary" loading="{{loading}}" disabled="{{disabled}}" bindtap="loginRequest">登录</button> 
     </view> 
 
   </view> 

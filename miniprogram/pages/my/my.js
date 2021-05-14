@@ -1,4 +1,5 @@
 // pages/my/my.js
+const globalData = getApp().globalData
 Page({
 
   /**
@@ -16,6 +17,32 @@ Page({
       class:"",
       introduction:"",
     }
+  },
+
+  /**
+   * 退出登陆
+   */
+  unlogin:function(e) {
+    //清空全局数据
+    console.log("[unlogin]", e)
+    globalData.userInfo = {
+      student_id:"",
+      id:"",
+      name:"",
+    }
+    wx.showModal({
+      title:'确定退出登陆吗',
+      confirmColor:'#F76260',
+      cancelColor: '#AAAAAA',
+      success:res => {
+        wx.reLaunch({
+          url: '../login/login',
+          success:_res => {
+            console.log("[退出登陆]", _res)
+          }
+        })
+      }
+    })
   },
 
   /**
