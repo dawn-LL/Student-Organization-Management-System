@@ -49,14 +49,14 @@ Page({
    * 上传头像
    */
   uploadImage:function(e) {
-    console.log("[image0]", e)
     wx.chooseImage({
       count: 1,
       success: res => {
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
-        var tempFilePaths = res.tempFilePaths
+        var tempFilePaths = res.tempFilePaths[0]
         var originalDefaultImages = this.data.defaultImages
         originalDefaultImages[0] = tempFilePaths
+        debugger
         this.setData({
           selectedImageIndex:0,
           defaultImages:originalDefaultImages
@@ -70,7 +70,6 @@ Page({
    * 选择默认头像
    */
   chooseDefaultImage:function(e) {
-    console.log("[image00]", e)
     this.setData({
       selectedImageIndex:e.currentTarget.id
     })
@@ -84,10 +83,11 @@ Page({
    */
   createOrganization:function(e) {
     if (this.data.selectedImageIndex == 0){//如果是自定义图片
-      var parser = document.createElement('a')
-      parser.href = this.data.defaultImages[0]
-      var pathname = parser.pathname.substring(1)
-      console.log(this.data.defaultImages[0])
+      var parser = this.data.defaultImages[0]
+      console.log("[本地图片路径]", parser)
+      var array = parser.split('/')
+      var pathname = array[array.length - 1]
+      console.log("[头像 pathname]", pathname)
       wx.cloud.uploadFile({
         cloudPath:pathname,
         filePath:this.data.defaultImages[0],
