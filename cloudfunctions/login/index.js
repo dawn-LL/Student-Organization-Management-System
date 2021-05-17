@@ -25,9 +25,8 @@ exports.main = async (event, context) => {
     student_id:event.account
   }).get()
   console.log("rse:", res)
-  console.log("res password:", res.data[0].password)
-  console.log("res id:", res.data[0]._id)
-  console.log("event password:", event.password)
+
+  console.log("event:", event)
   
   if (event.password == res.data[0].password) {
     return {
