@@ -56,7 +56,6 @@ Page({
         var tempFilePaths = res.tempFilePaths[0]
         var originalDefaultImages = this.data.defaultImages
         originalDefaultImages[0] = tempFilePaths
-        debugger
         this.setData({
           selectedImageIndex:0,
           defaultImages:originalDefaultImages

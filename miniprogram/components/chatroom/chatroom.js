@@ -34,6 +34,9 @@ Component({
       }
     },
 
+    /**
+     * 初始化房间，最多拉取20条消息
+     */
     async initRoom() {
       this.try(async () => {
         console.log("[init room][properties info]", this.properties)
@@ -280,6 +283,9 @@ Component({
       }).exec()
     },
 
+    /**
+     * 向上滑动请求消息，最多20条
+     */
     async onScrollToUpper() {
       if (this.db && this.data.chats.length) {
         const { collection } = this.properties
@@ -288,6 +294,7 @@ Component({
           sendTimeTS: _.lt(this.data.chats[0].sendTimeTS),
         })).orderBy('sendTimeTS', 'desc').get()
         this.data.chats.unshift(...data.reverse())
+        console.log("[向上滑动至顶部][消息jiazai]", this.data.chats)
         this.setData({
           chats: this.data.chats,
           scrollToMessage: `item-${data.length}`,

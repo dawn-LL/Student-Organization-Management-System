@@ -20,7 +20,7 @@ Page({
    * 发布公告
    */
   publishAnnouncement:function() {
-    var timestamp = new Date().getTime();
+    var timestamp = new Date().getTime()
     var author = getApp().globalData.userInfo.name
     var announcement = {
       author:author,

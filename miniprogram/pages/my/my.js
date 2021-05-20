@@ -24,16 +24,17 @@ Page({
   unlogin:function(e) {
     //清空全局数据
     console.log("[unlogin]", e)
-    globalData.userInfo = {
-      student_id:"",
-      id:"",
-      name:"",
-    }
     wx.showModal({
       title:'确定退出登陆吗',
       confirmColor:'#F76260',
       cancelColor: '#AAAAAA',
       success:res => {
+        globalData.userInfo = {
+          student_id:"",
+          id:"",
+          name:"",
+          avatar:"",
+        }
         wx.reLaunch({
           url: '../login/login',
           success:_res => {
@@ -58,13 +59,13 @@ Page({
         this.setData({
           userInfo:{
             name:res.result.data.name,
-            gender:"0",
+            gender:res.result.data.gender?"男":"女",
             avatar:res.result.data.avatar,
             student_id:res.result.data.student_id,
-            college:"0",
-            major:"0",
-            grade:"0",
-            class:"0",
+            college:res.result.data.college,
+            major:res.result.data.specialty,
+            grade:res.result.data.grade,
+            class:res.result.data.class,
             introduction:(res.result.data.introduction?res.result.data.introduction:"无"),
           }
         })
